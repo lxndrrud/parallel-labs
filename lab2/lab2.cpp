@@ -17,12 +17,7 @@ void generate(int i) {
 
 void cycle(int from, int until) {
     for (int i = from; i < until; ++i) {
-        std::future<void> ft;
-        if (i % 2 == 0) {
-            ft = std::async (generate, i);
-        } else {
-            ft = std::async (generate, i);
-        }
+        std::future<void> ft = std::async (generate, i);
         ft.get();
     }
 }
