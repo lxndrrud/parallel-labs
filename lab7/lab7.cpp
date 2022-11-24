@@ -21,4 +21,5 @@ void consumer() {
 int main() {
     std::thread t1(producer), t2(consumer);
     t1.join(), t2.join();
+    return 0;
 }

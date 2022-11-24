@@ -11,8 +11,8 @@ void thread1() {
 
 void thread2() {
     while (!y.load(std::memory_order_acquire)); // (4)
-    std::cout << std::endl << x.load(std::memory_order_relaxed) << std::endl 
-        << y.load(std::memory_order_acquire) << std::endl; // (5)
+    std::cout << std::endl << "x: " << x.load(std::memory_order_relaxed) << std::endl 
+        << "y: " << y.load(std::memory_order_acquire) << std::endl; // (5)
 }
 
 int main() {
